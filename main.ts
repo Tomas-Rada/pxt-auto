@@ -1,12 +1,10 @@
+const heslo: string = "njimok@<>"
+
+
 
 radio.setGroup(234)
 radio.setFrequencyBand(54)
 radio.setTransmitSerialNumber(true)
-
-
-
-
-
 let setNumber: number = 0
 let p: boolean = false 
 let x: number = 0
@@ -15,15 +13,15 @@ let x_l: number = 0
 let y_l: number = 0
 //nastavení kontroly
 radio.onReceivedValue(function(name: string, value: number) {
-    if (name === "njimok@<>" && p) {
+    if (name === heslo && p) {
         setNumber=value
     }
 })
-radio.onReceivedValue(function(name: string, value: number) {
-    if
-})
+
 
 basic.forever(function () {
+    radio.onReceivedValue(function (name: string, value: number) {
+        if (name === heslo && setNumber ===  )
 
 
 
@@ -79,8 +77,6 @@ basic.forever(function () {
     else if (y < -30) {
         x_l = -1
     }
-    radio.sendValue("X", x_l)
-    radio.sendValue("Y", y_l)
     basic.pause(20)
-
+    })
 })
